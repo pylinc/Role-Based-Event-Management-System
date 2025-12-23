@@ -1,0 +1,78 @@
+User Roles
+
+Admin
+
+Create, update, delete ANY event
+Manage users (promote/demote roles)
+
+Organizer
+
+Create and manage their own events only
+Cannot access other organizer's events
+Cannot manage users
+
+Student/User
+
+View events
+Register for events
+Cannot create or modify events
+
+⭐ Features
+
+🔐 Authentication
+
+Signup (User chooses: Student or Organizer)
+
+Login
+JWT-based token
+Role stored inside DB
+Protected Routes (middleware)
+
+🔏 Authorization
+admin-only routes
+organizer-only routes
+Event editing restricted: organizers can update only their own events
+
+🗂️ Event Operations (CRUD)
+
+Create event✅
+View all events✅
+View single event ✅
+Update event (role-based) ✅
+Delete event ✅
+
+📝 User Operations
+
+Admin can:
+View all users
+Change roles
+Delete user
+
+
+🎫 Event Registration
+
+A user can register for an event
+Prevent duplicate registrations
+
+
+project/
+│── config/
+│   └── database.js 
+│── models/
+│   ├── User.js 
+│   └── Event.js 
+|   └── Registration 
+│── controllers/
+│   ├── authController.js 
+│   ├── eventController.js 
+│   └── userController.js 
+│── middlewares/
+│   ├── auth.js 
+│  
+│── routes/
+│   ├── authRoutes.js
+│   ├── eventRoutes.js
+│   └── userRoutes.js
+│── .env
+│── index.js
+│── package.json
